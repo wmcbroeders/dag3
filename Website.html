@@ -25,6 +25,67 @@
         img {
             max-width: 100%;
             height: auto;
+			        /* ... (bestaande CSS-regels) ... */
+        
+        /* Voeg nieuwe CSS-regels toe voor het hamburgermenu */
+        .menu-btn {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .nav {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+            
+            .nav {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welkom op mijn Website</h1>
+    <!-- Voeg de menuknop toe -->
+    <div class="menu-btn" onclick="toggleNav()">☰ Menu</div>
+    <!-- Voeg het verborgen navigatiemenu toe -->
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Over Ons</a>
+        <a href="#">Diensten</a>
+        <a href="#">Contact</a>
+    </div>
+</header>
+
+<!-- ... (bestaande body-inhoud) ... -->
+
+<script>
+    // JavaScript om het navigatiemenu te tonen/verbergen
+    function toggleNav() {
+        const nav = document.querySelector('.nav');
+        if (nav.style.display === 'block') {
+            nav.style.display = 'none';
+        } else {
+            nav.style.display = 'block';
         }
     </style>
 </head>
