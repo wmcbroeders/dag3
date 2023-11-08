@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willekeurige Hondenafbeelding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #new-image-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Willekeurige Hondenafbeelding</h1>
+    <img id="dog-image" src="" alt="Hondenafbeelding">
+    <button id="new-image-button">Toon een nieuwe afbeelding</button>
+
+    <script>
+        const dogImageElement = document.getElementById('dog-image');
+        const newImageButton = document.getElementById('new-image-button');
+
+        // Functie om een willekeurige hondenafbeelding op te halen
+        function getDogImage() {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data.message;
+                    dogImageElement.src = imageUrl;
+                })
+                .catch(error => {
+                    console.error('Fout bij het ophalen van de afbeelding:', error);
+                });
+        }
+
+        // Voeg een eventlistener toe aan de knop
+        newImageButton.addEventListener('click', getDogImage);
+
+        // Toon een willekeurige afbeelding bij het laden van de pagina
+        getDogImage();
+    </script>
+</body>
+</html>
