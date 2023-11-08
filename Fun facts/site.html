@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun Facts over Nederland</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 50px;
+        }
+        h1 {
+            color: #000000;
+            font-size: 36px;
+        }
+        p {
+            color: #333333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact over Nederland</h1>
+        <p id="fact"></p>
+    </div>
+    <script>
+        var facts = [
+            "Nederland heeft de hoogste concentratie musea ter wereld.",
+            "Het Nederlandse dorp Giethoorn heeft geen wegen; de gebouwen zijn verbonden met volledig met kanalen en voetbruggen.",
+            "Koninkrijk der Nederlanden bestaat uit vier landen: Nederland, Aruba, Curaçao en Sint Maarten.",
+            // Voeg hier meer feiten toe...
+        ];
+        document.getElementById('fact').innerHTML = facts[Math.floor(Math.random() * facts.length)];
+    </script>
+</body>
+</html>

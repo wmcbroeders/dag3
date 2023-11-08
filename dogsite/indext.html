@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willekeurige Hondenafbeelding</title>
+    <title> Hondenafbeelding</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #4CAF50;
             color: white;
             text-align: center;
+            transition: background-color 0.5s;
         }
 
         h1 {
@@ -19,6 +20,7 @@
         img {
             max-width: 100%;
             height: auto;
+            transition: opacity 0.5s;
         }
 
         #new-image-button {
@@ -28,10 +30,15 @@
             border: none;
             cursor: pointer;
         }
+
+        /* Voeg een klasse toe om de achtergrondkleur te veranderen */
+        .blue-background {
+            background-color: #3498db;
+        }
     </style>
 </head>
 <body>
-    <h1>Willekeurige Hondenafbeelding</h1>
+    <h1> Hondenafbeelding</h1>
     <img id="dog-image" src="" alt="Hondenafbeelding">
     <button id="new-image-button">Toon een nieuwe afbeelding</button>
 
@@ -45,7 +52,20 @@
                 .then(response => response.json())
                 .then(data => {
                     const imageUrl = data.message;
-                    dogImageElement.src = imageUrl;
+
+                    // Voeg een klasse toe om de achtergrondkleur te veranderen (optioneel)
+                    document.body.classList.add('blue-background');
+
+                    // Verberg de afbeelding door de ondoorzichtigheid naar 0 te laten overgangen
+                    dogImageElement.style.opacity = 0;
+
+                    // Wacht tot de overgang is voltooid en verander dan de afbeelding
+                    setTimeout(() => {
+                        dogImageElement.src = imageUrl;
+
+                        // Laat de afbeelding weer verschijnen door de ondoorzichtigheid naar 1 te laten overgangen
+                        dogImageElement.style.opacity = 1;
+                    }, 500);
                 })
                 .catch(error => {
                     console.error('Fout bij het ophalen van de afbeelding:', error);
