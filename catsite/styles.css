@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#image-container {
+    margin-top: 20px;
+}
+
+#cat-image {
+    width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#change-cat {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#change-cat:hover {
+    background-color: #2980b9;
+}
