@@ -32,6 +32,7 @@
         img {
             max-width: 100%;
             height: auto;
+        }
 			        /* ... (bestaande CSS-regels) ... */
         
         /* Voeg nieuwe CSS-regels toe voor het hamburgermenu */
@@ -66,11 +67,25 @@
                 display: block;
             }
         }
-    </style>
+    
+
+    /* ... (bestaande body-inhoud) ... */
+</style>
+<script>
+    /* JavaScript om het navigatiemenu te tonen/verbergen */
+    function toggleNav() {
+        const nav = document.querySelector('.nav');
+        if (nav.style.display === 'block') {
+            nav.style.display = 'none';
+        } else {
+            nav.style.display = 'block';
+        }}
+        </script>
+
 </head>
 <body>
 
-<header>
+    <header>
     <h1>Welkom op mijn Website</h1>
     <!-- Voeg de menuknop toe -->
     <div class="menu-btn" onclick="toggleNav()">☰ Menu</div>
@@ -81,25 +96,6 @@
         <a href="#">Diensten</a>
         <a href="#">Contact</a>
     </div>
-</header>
-
-<!-- ... (bestaande body-inhoud) ... -->
-
-<script>
-    // JavaScript om het navigatiemenu te tonen/verbergen
-    function toggleNav() {
-        const nav = document.querySelector('.nav');
-        if (nav.style.display === 'block') {
-            nav.style.display = 'none';
-        } else {
-            nav.style.display = 'block';
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Welkom op mijn Website - Pepsi to the Max - WBR</h1>
 </header>
 
 <div class="container">
